@@ -21,7 +21,7 @@ resource "aws_s3_bucket_website_configuration" "frontend_config" {
   }
 }
 
-# 3. Public Access Block (We'll allow public reads for the website)
+# 3. Public Access Block 
 resource "aws_s3_bucket_public_access_block" "frontend_access" {
   bucket = aws_s3_bucket.frontend_bucket.id
 
