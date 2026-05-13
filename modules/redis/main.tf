@@ -7,7 +7,7 @@ resource "aws_security_group" "redis_sg" {
     from_port       = 6379
     to_port         = 6379
     protocol        = "tcp"
-    security_groups = [var.backend_sg_id] # Only the backend server can enter
+    security_groups = [var.backend_sg_id] 
   }
 
   egress {
@@ -18,7 +18,7 @@ resource "aws_security_group" "redis_sg" {
   }
 }
 
-# 2. Redis Subnet Group (Tells AWS which subnets Redis can live in)
+# 2. Redis Subnet Group 
 resource "aws_elasticache_subnet_group" "redis_subnet_group" {
   name       = "redis-subnet-group"
   subnet_ids = [var.private_subnet_id]
@@ -28,7 +28,7 @@ resource "aws_elasticache_subnet_group" "redis_subnet_group" {
 resource "aws_elasticache_cluster" "redis" {
   cluster_id           = "muchtodo-redis"
   engine               = "redis"
-  node_type            = "cache.t3.micro" # Stay in Free Tier territory
+  node_type            = "cache.t3.micro" 
   num_cache_nodes      = 1
   parameter_group_name = "default.redis7"
   port                 = 6379
