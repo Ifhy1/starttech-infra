@@ -1,4 +1,4 @@
-# 1. Automatically find the latest Ubuntu 22.04 AMI
+# 1. Automatically finds the latest Ubuntu 22.04 AMI
 data "aws_ami" "ubuntu" {
   most_recent = true
   owners      = ["099720109477"] # Canonical
@@ -42,7 +42,7 @@ resource "aws_security_group" "backend_sg" {
     security_groups = [aws_security_group.alb_sg.id]
   }
 
-  # Allows your browser to visit the IP directly
+  # Allows browser to visit the IP directly
   ingress {
     from_port   = 80
     to_port     = 80
@@ -120,7 +120,7 @@ resource "aws_lb_listener" "backend_listener" {
   }
 }
 
-# 4. Attach your EC2 instance to the Target Group
+# 4. Attach EC2 instance to the Target Group
 resource "aws_lb_target_group_attachment" "backend_attach" {
   target_group_arn = aws_lb_target_group.backend_tg.arn
   target_id        = aws_instance.web.id
