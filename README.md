@@ -69,7 +69,4 @@ terraform apply
 - compute: EC2, Auto Scaling Group, ALB, security groups
 - storage: S3 bucket, CloudFront distribution
 - monitoring: CloudWatch log groups, alarms
-Save and push:
-bashgit add README.md
-git commit -m "docs: add infrastructure README"
-git push origin main
+
