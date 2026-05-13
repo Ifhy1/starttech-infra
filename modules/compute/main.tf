@@ -9,7 +9,7 @@ data "aws_ami" "ubuntu" {
   }
 }
 
-# 2. Security Group for the Load Balancer (The Entrance)
+# 2. Security Group for the Load Balancer 
 resource "aws_security_group" "alb_sg" {
   name   = "alb_sg_modular"
   vpc_id = var.vpc_id
@@ -29,7 +29,7 @@ resource "aws_security_group" "alb_sg" {
   }
 }
 
-# 3. Security Group for the Server (The House)
+# 3. Security Group for the Server 
 resource "aws_security_group" "backend_sg" {
   name   = "backend_sg_modular"
   vpc_id = var.vpc_id
@@ -92,7 +92,7 @@ resource "aws_lb" "backend_alb" {
   tags = { Name = "MuchTodo-ALB" }
 }
 
-# 2. The Target Group (The "Bucket" for your EC2 instances)
+# 2. The Target Group 
 resource "aws_lb_target_group" "backend_tg" {
   name     = "muchtodo-tg"
   port     = 80
