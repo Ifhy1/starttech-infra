@@ -16,6 +16,8 @@ This repository contains all the infrastructure code for the StartTech applicati
 - Security Groups for network access control
 
 ## Repository Structure
+
+```
 starttech-infra/
 ├── .github/
 │   └── workflows/
@@ -32,6 +34,7 @@ starttech-infra/
 ├── monitoring/
 ├── scripts/
 └── README.md
+```
 
 ## Deployment
 
